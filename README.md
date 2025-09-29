@@ -208,18 +208,37 @@ graph LR
 A[Reward in ai16z] --> D[Credit to ai16z Wallet]
 
 ```
+or
+```mermaid
+
+graph LR
+
+A[Reward in RP] --> D[Credit to RP Wallet]
+
+```
 
 >  ***Note**:*
 
 >  -  *Earning Bonus and Alliance Bonus all reward in ai16z which credit to ai16z wallet*
 >  - *If max cap bonus usage > max cap bonus, then it will stop distribute bonus in ai16z token, it will change it to RP tokens*
-###  Reward in Labubu (SOL Chain Only)
+###  Reward in ai16z (SOL Chain Only)
 ```mermaid
 graph LR
 
-A[Reward in Meets] --> B[Deduct 5%]
+A[Reward in ai16z] --> B[Deduct 5%]
 
-B --> C[Credit to Meets Wallet]
+B --> C[Credit to ai16z Wallet]
+
+```
+
+OR
+
+```mermaid
+graph LR
+
+A[Reward in RP] --> B[Deduct 5%]
+
+B --> C[Credit to RP Wallet]
 
 ```
 
