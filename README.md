@@ -11,88 +11,209 @@
 
 |Chain| Tokens| Credit to Local Wallet|Deposit Method|
 |--|--|--|--|
-| BSC| USDT (0x55d398326f99059ff775485246999027b3197955) | USDT | Normal Transfer |
+| SOL| USDT (8sLmRB4mPhtLucbXqzmAz8SGsbXDyAbf94Tzj427XjYA) | USDT | Normal Transfer |
 
 >  ***Note**:*
 
->-  *For **TRON & BSC** chain deposit, every user will assign one unique Deposit Address, user may directly transfer token into self deposit address.*  <br/>
+>-  *For **SOL** chain deposit, every user will assign one unique Deposit Address, user may directly transfer token into self deposit address.*  <br/>
 
   
 
-##  2) Stakings
-**A.Hash Mining** 
+##  2) Deposit Game Token
+**A.Affect Max Cap Bonus** 
+- Admin side can add GT token to user that will increase the total Max Cap Bonus without increase Max Cap Bonus Usage.
+- Another action admin can make is increase GT token, but it will increase Max Cap Bonus Usage value.
+- If user reach the value of the bonus max cap usage, admin add GT token user will automatically turn into RP token.
+- It has 5% charges
 
-Minimum Hash Mining is $100. <br>
+### ✅ Exit Rule Explanation
+- **Exit** = Once a player reaches the defined profit multiplier, the system automatically transfers the funds into **RP Wallet**, and the account must be **re-activated by depositing again**.  
+
+---
+
+### 📊 Deposit & Exit Multipliers
+| Deposit Amount (USDT) | Exit Multiplier |
+|-----------------------|-----------------|
+| **< $1,001**          | 1.5×            |
+| **< $5,001**          | 2.0×            |
+| **≥ $5,000**          | 2.5×            |
+
+- **Level Bonus**: From **Hero (Level 4) and above**, players gain an additional **+0.5×** multiplier.  
+- **Maximum Exit Multiplier = 4×**.  
+
+---
+
+### 🔄 Cumulative Calculation Logic
+- The system calculates based on the **single cumulative deposits** of the player (not per total deposit).  
+- When the total deposit crosses a new tier, the **exit multiplier** automatically updates (including level bonuses).  
+
+---
+
+## 💳 Register Point Wallet (RP Wallet)
+
+- **RP Wallet** = A points wallet, valued **1:1 with USDT**.  
+
+### 🎯 Usage
+- **Re-deposit**: 80% Cash + 20% RP.  
+- **Transfer to Direct Members**: Upline can transfer RP to downline members, who can also use **80% Cash + 20% RP** to deposit. 
 
 
-| Staking | Payment Method | Added Date| Available |
-|--|--|--|--|
-| Normal Staking | - 100% USDT Wallet | - | No(Remove at  2025-02-10 15:00:00) |
-| With Meets Staking  | - 90% USDT Wallet <br> - 10%mMeets(Excahnge From USDT rate) | - | No(Remove at  2025-02-10 15:00:00) |
-| Staking with Meets Only  | - 100% Meets Wallet <br> - 100%mMeets(Excahnge From USDT rate) | 2025-02-10 15:00:00 | Yes |
+**B.Not affect Max Cap Bonus**
 
-
-**B.Liquidity Mining**
-
-Minimum Hash Mining is $100. <br>
-| Staking | Payment Method | Added Date| Available |
-|--|--|--|--|
-| Normal Staking | - 100% USDT Wallet | 2025-02-10 15:00:00 | Yes |
-| With Meets Staking  | - 90% USDT Wallet <br> - 10%mMeets(Excahnge From USDT rate) | 2025-02-10 15:00:00 | Yes |
-
->  ***Note**:*
-
->  -  *Only members are allowed to perform real staking, which deducts USDT. Admins do not have permission to add real staking for member.  
->   -  *Only admins are allowed to perform free staking for member. Members cannot add free staking for themselves.
->   -  Start from 10-02-2025, staking will separate 2 different staking type; Hash Mining & Liquidity Mining. Hash Mining stake by Meets value and Liquidity Mining stake by USDT.
->   -  Current Hash Mining will distribute bonuses for Staking Direct Sponsor and Staking Overriding in Meets tokens, as the staking is done using Meets tokens. Previously, both bonuses were distributed only in USDT until February 11, 2025.
->   -  The new Liquidity Mining will distribute bonuses for Staking Direct Sponsor and Staking Overriding in USDT.   
-
+- Is just simple ai16z transfer to GT token. But it will decrease the bonus max cap usage. <br>
+- It has 3% charges
   
-##  3) Nodes
-Each node costs $3000, and a member can only have one node, either a free one or a purchased one.
->  ***Note**:*
+##  3) Purchase Pass
+- Players can **purchase a pass** to unlock more in-game features (such as blind boxes).  
+- Passes are available for different durations: **7 days, 15 days, and 30 days**.  
+- The pass becomes **effective immediately upon purchase**.
 
->  -  *When a member buys a node, they receive 3000 in free staking. Free nodes do not include the 3000 staking.
->   -  *Once a user has a purchased or free node, they become eligible to collect the Nodes Investment bonus, calculated on the first day of each month. For example, if a user buys a node on November 8th, they qualify for the bonus when calculated on December 1st, as only 23 days have passed (less than the 30-day limit). This allows them to receive the bonus for all of December. If 30 days have passed, eligibility for the bonus depends on achieving a minimum of $5000 in small zone sales.
-  
+## 4) 📦 Blind Box Purchase & 🎲 Lucky Draw
+- Players can **purchase blind boxes** to participate in the game.  
+- Each blind box purchase also unlocks the **Lucky Draw**, giving players a chance to win extra rewards.  
 
-##  4) Withdrawal
+After opening a blind box, rewards are granted through a **randomized reward pool**.
+
+---
+
+### 🔑 Unlock Rules
+| Blind Box Value (USDT) | Unlock Time | Reward Pool |
+|------------------------|-------------|-------------|
+| **$50 – $299**         | 8 hours     | Weapons, Equipment |
+| **$300 – $999**        | 10 hours    | Weapons, Equipment, Fragments (White / Pink / Orange / Blue) |
+| **$1000 – $2000**      | 12 hours    | Weapons, Equipment, LBB Fragments, Limited Edition Fragments |
+
+---
+
+### 🛡️ Reward Types & Values
+- **Weapons** → Bow, Axe, Sword, Throwing Knife, Spear, etc. (**$38 / $88**)  
+- **Equipment** → Clothes, Gloves, Helmet, Glasses, Wings, Shoes, etc. (**$188 / $388**)  
+- **LBB Fragments**:  
+  - White / Pink → 6 = 1 piece (**$588**)  
+  - Orange / Blue → 6 = 1 piece (**$888**)  
+  - Yellow / Cyan → 6 = 1 piece (**$1888**)  
+  - Limited Edition (2 types) → 6 = 1 piece (**$8888**)  
+
+---
+
+### ⚙️ Fragment Distribution Logic
+- Applies only to **$1000+ blind boxes**.  
+- Fragments are **randomly distributed** (max 5 pieces).  
+- The **6th fragment** is unlocked based on **performance activity** (*direct referral achievements*).  
+
+| Fragment Value | Performance Requirement |
+|----------------|--------------------------|
+| **$588**       | 25k                      |
+| **$888**       | 50k                      |
+| **$1888**      | 100k                     |
+| **$8888**      | 500k                     |
+
+👉 Higher performance = higher chance to unlock **rare fragments**.  
+
+---
+
+### 💡 Notes
+> - Rewards are **randomized by the system**.  
+> - Admins can configure the **reward pool amount ($$$)** in the backend, and the system will distribute accordingly.  
+
+## 5) 🛒 Blind Box Listing & Flash Purchase
+
+### 📌 Feature Requirements
+- Blind boxes can be freely traded in the marketplace.  
+- Players may **list blind boxes** for sale, and other players can **flash-purchase** them.  
+- The system automatically **adds +6%** to the blind box base price, forming the **final market price**.  
+- Listing time is set to **8–12 hours**.  
+- After the countdown ends, the blind box becomes available for sale.  
+- If a player successfully flash-purchases, the transaction is completed:  
+  - Blind box is transferred to the buyer’s account.  
+  - Seller receives the corresponding earnings.  
+
+---
+
+### 🏬 Marketplace Structure (Labubu Center)
+The listing marketplace is divided into **three sections**:  
+
+1. **Blind Box Trading Zone**  
+   - Displays *all listed blind boxes* from players.  
+   - Includes blind box type & price.  
+   - Real-time updates for the latest market activity.  
+
+2. **On Sale (My Listings)**  
+   - Displays the current player’s *active listings*.  
+   - Includes blind box type & price.  
+
+3. **My Blind Boxes (Pending Listings)**  
+   - Displays blind boxes *waiting for listing countdown*.  
+   - Includes blind box type, price, and countdown timer.  
+
+| Blind Box Value (USDT) | Listing Unlock Time |
+|------------------------|----------------------|
+| **$50 – $299**         | 8 hours |
+| **$300 – $999**        | 10 hours |
+| **$1000 – $2000**      | 12 hours |
+
+---
+
+### 💰 Price Calculation
+- Base price = **USDT value of blind box**.  
+- System auto-adds **+6% (in Ai16Z tokens)**.  
+- **Final Market Price = Listing Price + 6% Auto-Markup**.  
+
+---
+
+### ⚡ Flash Purchase Logic
+- Players can select blind boxes they wish to purchase from the market.  
+- Upon successful purchase:  
+  - The transaction is completed automatically.  
+  - Blind box transfers to the **buyer’s account**.  
+  - **Seller receives earnings**.  
+- Purchased blind boxes also grant **random rewards (Lucky Draw)**.  
+
+---
+
+### 📊 6% Earnings Distribution
+From each successful transaction, **6% of the amount** is distributed as follows:  
+
+- **2% → Players** (rebate to the flash-purchasing player).  
+- **2% → Alliance Bonus**  
+  - Team bonus up to 10 generations.  
+  - 2% = 100%, each generation = **10% = 0.2%**.  
+- **2% → Game Vault**  
+  - Used for Final Big Winner Pool, network dividends, company revenue, and the next winner pool.  
+
+
+##  6) Withdrawal
 
   
 
 |Chain| Wallet | Minimum Withdrawal | Charges |Withdrawal Method|
 |--|--|--|--|--|
-| BSC| USDT | 50 USDT | $1 | Admin Normal Transfer |
-| BSC| MEETS| 50 meets | $1 | Admin Normal Transfer |
-| BSC| Tubes USD(Added at 18/12/2024)| 50 TubesUSD | $1 | Admin Normal Transfer |
+| SOL| USDT | 0 USDT | 0 | Admin Normal Transfer |
   
 
 >  ***Note**:*
 
 >  -  ***(USDT Only)** total withdrawal to each chain cannot exceed the total of deposits from particular chain.* 
->  -  ***(Meets Only)** total withdrawal to each chain cannot exceed the total of Meets from particular chain.* <br/>
 
   
 
-##  5) Bonuses
+##  7) Bonuses
 
-  ###  Reward in USDT (BCS Chain Only)
+  ###  Reward in ai16z (SOL Chain Only)
 
 ```mermaid
 
 graph LR
 
-A[Reward in USD] --> D[Credit to Deposit Wallet]
+A[Reward in ai16z] --> D[Credit to ai16z Wallet]
 
 ```
 
 >  ***Note**:*
 
->  -  *Staking Direct Sponsor, Nodes Direct Sponsor, Staking Overriding and Nodes Overriding all reward in Usdt which credit to deposit wallet*
->  -  *Start from 2025-02-11,Staking Direct Sponsor and Staking Overriding will distribute USDT(From Liquidity Mining) and Meets(From Hash Mining)  *
->  
-###  Reward in Meets (BCS Chain Only)
+>  -  *Earning Bonus and Alliance Bonus all reward in ai16z which credit to ai16z wallet*
+>  - *If max cap bonus usage > max cap bonus, then it will stop distribute bonus in ai16z token, it will change it to RP tokens*
+###  Reward in Labubu (SOL Chain Only)
 ```mermaid
 graph LR
 
@@ -102,97 +223,55 @@ B --> C[Credit to Meets Wallet]
 
 ```
 
->  ***Note**:*
 
->  -  *Nodes Invest, Staking Invest and Staking Invest Overriding all reward in Meets which credit to Meets wallet*  <br/>
-
-
-###  Ranking (V0-V10) Distribute in USDT
+### a. Ranking (Bronze-Legend) Distribute in ai16z
 Only Small Zone Sales (Exclude Big Leg) is used to calculate ranking, thus minimum 2 legs (Group) require for rank upgrade.
-|Ranking| Small Zone Sales (USD) | Overriding Percentage |
-|--|--|--|
-| V1 | 2,000 | 0% |
-| V2 | 5,000 | 0% |
-| V3 | 10,000 | 3% |
-| V4 | 50,000 | 6% |
-| V5 | 100,000 | 9% |
-| V6 | 300,000 | 11% |
-| V7 | 500,000 | 13% |
-| V8 | 1,000,000 | 14% |
-| V9 | 3,000,000 | 15% |
-| V10 | 10,000,000 |16% |
-
-###  Ranking (V0-V10) Distribute in Meets
-Only Small Zone Sales (Exclude Big Leg) is used to calculate ranking, thus minimum 2 legs (Group) require for rank upgrade.
-|Ranking| Small Zone Sales (USD) | Overriding Percentage |
-|--|--|--|
-| V1 | 2,000 | 10% |
-| V2 | 5,000 | 20% |
-| V3 | 10,000 | 35% |
-| V4 | 50,000 | 50% |
-| V5 | 100,000 | 65% |
-| V6 | 300,000 | 70% |
-| V7 | 500,000 | 85% |
-| V8 | 1,000,000 | 90% |
-| V9 | 3,000,000 | 95% |
-| V10 | 10,000,000 |100% |
-
-  
+|Ranking| Small Zone Sales (USD) | Entitlement buy box qty | Sell Box Restriction qty | Reward Levels |
+|--|--|--|--|--|
+| Bronze | 0 | 2 | 2 | 2 |
+| Silver | 2,500 | 3 | 3 | 4 |
+| Gold | 10,000 | 4 | 4 | 5 |
+| Platinum | 50,000 | 5 | 5 | 6 |
+| Diamond | 250,000 | 6 | 6 | 8 |
+| Legend | 500,000 | 7 | 7 | 10 |
 
 >  ***Note**:*
 
->  -  *User need to have minimum **staking of  $100** or buy **Nodes** to activate ranking.* <br/>
->  -  *Small zone sales are calculated based on real staking and the 3000 free staking from node purchases only* 
+>  -  *Small zone sales are calculated based on Deposit amount / swap from game wallet to usdt wallet only*
+>  -  *Rank calculate weekly based on user in game date*
+>  -  *Different Rank will affect Bonus Max Cap limit, getting bonus Alliance Bonus, buy box qty and sell box qty* 
 
-###  Direct Sponsor Ranking (D1-D3)
-|Ranking| Referral Total |  Direct Sponsor Percentage |
-|--|--|--|
-| D1 | 1 | 1st Level: 2% |
-| D2 | 3 | 1st Level: 2%, 2nd Level: 3% |
-| D3 | 5 | 1st Level: 2%, 2nd Level: 3%, 3rd Level: 4% |
-
->  ***Note**:*
-
->  -  *User need to have minimum **staking of  $100**(included Free Staking) or buy **Nodes**(Included Free Node) to activate ranking.* <br/>
->  
-  
-###  Overriding & Matching Overriding (Same / Lower Rank)
-
-  
-
-Override on self's network daily ROI reward according Rank's overriding percentage
-
-  
-
-While distribute overriding, if upline（One Level only）is Same / Lower ranking, this upline may get 10% of reward
-
-  
-
->  ***Note**:*
-
->  -  *Same / Lower Rank only entitle for **ONE LEVEL UPLINE** only.*  <br/>
 
 ###  Bonus Type
-|No| Type | Request Date | Live Date | Distribute In | Description |
+|No| Type | Distribute In | Description |
 |--|--|--|--|--|--|
-| 1 | Staking Direct Sponsor | 2024-08-07 | 2024-09-17 | USDT & Meets | - Bonus calculate based on Hash Mining and Liquidity Mining. Can refer Direct Sponsor Ranking (D1-D3) for the distribution bonus, distribute one time only.<br>- Starting from February 11, 2024, Liquidity Mining will be included. <br>- Starting from February 11, 2024, Hash Mining only distribute it in Meets token only. | 
-| 2 | Nodes Direct Sponsor | 2024-08-07 | 2024-09-17 | USDT | Bonus calculate based on staking. Can refer  Direct Sponsor Ranking (D1-D3) for the distribution bonus, distribute one time only . |
-| 3 | Staking Overriding | 2024-08-07 | 2024-09-17 | USDT  & Meets| - Overiding Bonus calculate based on Hash Mining and Liquidity Mining, and distribute bonus based on Ranking (V0-V10) Distribute in USDT, distrbute one time only <br>- Starting from February 11, 2024, Liquidity Mining will be included. <br>- Starting from February 11, 2024, Hash Mining only distribute it in Meets token only.|
-| 4 | Nodes Overriding | 2024-08-07 | 2024-09-17 | USDT | Overiding Bonus calculate based on nodes and distribute bonus based on Ranking (V0-V10) Distribute in USDT, distrbute one time only |
-| 5 | Nodes Invest | 2024-09-09 | 2024-10-01 | MEETS | - 5000 checking every month (Nodes Member) <br>-member who have node/free-node <br>-every month SMALL LEG SALE over 5000 (buy node(no buy nodes) / real staking / FreeStaking-from node.) <br>-check every month for next month(30days) bonus <br>-do a PopOut/notice for member to view their balance sale. <br>-if they didn’t get 5000 sale on small leg. They won’t get node bonus(roi on node) on next month . <br>- 5k / Total Eligible member = Per nodes user bonus |
-| 6 | Staking Invest | 2024-09-09 | 2024-10-01 | MEETS | -Before 2025-02-11: <br> User A staked $1000 (1000 hash) <br>User B staked $100 (100 hash) <br> User C staked $100 (100 hash) <br> Total ROI hash = 1200 hash <br> 20k / 1200 = 16.6667 <br>Total Overriding Hash = 120 hash <br>So final payout will be: <br>User A get: 1000 x 16.6667 = 16,666.7 meets <br>User B get: 100 x 16.6667 = 1666.67 meets <br>User C get: 100 x 16.6667 = 1666.67 meets <br> total 20k meets <br><br> -Start From 2025-02-11: <br>User A Old Hash Mining $1000 (1000 hash) <br>User B Old Hash Mining $100 (100 hash) <br> User C New Hash Mining $100 (100*2 = 200 Hash) <br> Total ROI hash = 1300 hash <br> 20k / 1300 = 15.3846 meets <br>Total Overriding Hash = 130 hash <br>So final payout will be: <br>User A get: 1000 x 15.3846 = 15,384.6 meets <br>User B get: 100 x 15.3846 = 1,538.47 meets <br>User C get: 200 x 15.3846 = 3,076.93 meets <br> total 20k meets||
-| 7 | Staking Invest Overriding | 2024-09-09 | 2024-10-01 | MEETS | -Before 2025-02-11: <br> User D get: 100 Hash (example v1 10% of 1000hash) <br>User E get: 10 Hash (example v1 10% of 100hash) <br>User F get: 10 Hash (example v1 10% of 100hash) <br>Total Overriding Hash = 120 hash <br>20k / 120 = 166.6667 <br>User D get: 100 x 166.6667 = 16666.67 meets <br>User E get: 10 x 166.6667 = 1666.667 meets <br>User F get: 10 x 166.6667 = 1666.667 meets <br> total 20k meets <br> -Distribute Daily, Distribute % based on Ranking (V0-V10) <br><br> - Start From 2025-02-11: <br> (From Old Hash Mining) User D get: 100 Hash (example v1 10% of 1000hash) <br>(From New Hash Mining) User E get: 20 Hash (example v1 10% of 200hash (100*2=200hash)) <br>(From Liquidity Mining) User F get: 10 Hash (example v1 10% of 100hash) <br>Total Overriding Hash = 130 hash <br>20k / 130 = 153.8461 <br>User D get: 100 x 153.8461 = 15,384.61 meets <br>User E get: 20 x 153.8461 = 3,076.922 meets <br>User F get: 10 x 153.8461 = 1,538.461 meets <br> total 20k meets <br> -Distribute Daily, Distribute % based on Ranking (V0-V10)|
-| 8 | Same Level Bonus | 2024-11-21 | 2024-12-04 | MEETS | 1.Peer-Level Reward 10% <br>-When the superior and subordinate are at the same level, the superior can receive 10% of the subordinate's dynamic income. <br> 2.Cross-Level Reward 10% <br>-When the superior's level is lower than the subordinate's, the superior can receive 10% of the subordinate's dynamic income. |
-| 9 | Invest Bonus | 2024-12-20 | 2025-01-02 | MEETS | 1.Initially, users can invest for a duration of 180 days, with a minimum investment range of 10,000 MEETS to 50,000 MEETS. Investment options are limited to fixed amounts of 10,000, 20,000, 30,000, 40,000, and 50,000 MEETS. Starting from January 19, 2025, users will have the flexibility to invest any amount ranging from 50 MEETS to 50,000 MEETS. <br>2.Invest Period: <br>-180 Days: Earn a 5% bonus per month. <br>-90 Days: Earn a 4% bonus per month (available from January 18, 2025). <br>-30 Days: Earn a 3% bonus per month (available from January 18, 2025). <br>3.The invested amount will be locked for the selected investment period. Once the specified period ends, the locked investment will be released back to the user. |
-| 10 | Liquidity Bonus | 2025-01-31 | 2025-02-10 15:00:00 | MEETS | Invest any amount to get 1% roi in meets.<br> Min 100 usd - max 50,000 usd <br> |
+| 1  | **Earning**     | Ai16z          | **Earnings Calculation**<br><br>Player A buys Player B’s blind box (**$106 = 100 USDT + $6 Ai16z tokens**).<br>- Player B receives a **2% rebate** in Ai16z tokens.<br>- Example: 2% rebate = **$2 Ai16z tokens**.<br>- A **$0.5 service fee** is charged from the player’s earnings. |
+| 2  | **Alliance Bonus** | Ai16z       | **Earnings Tiers**<br><br>Players reaching certain ranks can earn team bonuses across multiple levels.<br>- A **Gold** player: up to **5 levels**.<br>- A **Legend** player: up to **10 levels**.<br><br>🔎 **Note:** 2% = 100%. Each level = **10% = 0.2%**. |
+| 3  | **LBB Vault**   | Ai16z          | **2% Allocation – LBB Vault**<br><br>2% of each transaction goes into the **LBB Vault** for system maintenance and the future reward pool.<br><br>**Funds Distribution (2% = 100%)**:<br>- **45%** → *Final Big Winner Pool* (rewards the last player to purchase a blind box, jackpot-style).<br>- **35%** → *Network Dividend* (distributed step by step according to player levels).<br>- **10%** → *Next Round Pool* (funds the next Final Big Winner Pool).<br>- **10%** → *Company Revenue*. |
+
+ <br/>
+
+##  8) Swap 
+Currently, only **GT** tokens can be swapped to **USDT** OR **ai16z**. 
+
+>  - Each user have max cap bonus > 0 and max cap bonus usage <= 0 can only swap **ai16z**.
+>  - Each user have max cap bonus > 0 and max cap bonus usage > 0 can swap **GT**. Minimum amount is based on max cap bonus.
+>  - Token values are retrieved from the Lbank API, which updates every 5 minutes (only for ai16z, GT token is not **real token**).
+>  - Swap charges is 3% charges GT Token.
+
+
+##  9) Swap All OR Reinvest 
+| No | Type        | Description |
+|----|-------------|-------------|
+| 1  | **Swap All** | When a player reaches the Max Cap, they may **swap out the Lock Deposit** (subject to a 5% GT Token fee). If any remaining GT Tokens are left after the swap, they will be automatically converted into the **RP Wallet** (1:1 USDT value). Once Swap All is completed, the account is considered **exited** and requires a **new deposit** to reactivate. <br><br>✨ Note: Swap All can only be performed once the Max Cap bonus (user profits) has been fully swapped out into GT Tokens. |
+| 2  | **Reinvest** | After reaching Max Cap, the original deposit (e.g., 1000 USDT) is considered **finished**. If the player reinvests (e.g., 1000*0.97 = 970 USDT), then only **970 × multiplier** is valid for the new round. The new **Lock Deposit = 970**, not 1000 + 970. |
 
 >  ***Note**:*
->  -  *Start from 2025-02-11, For the new Hash Mining, the hash calculation will be 100 hash plus 50% of its 100 hash value. The old hash mining the remain same. * <br/>
->  -  *Start from 2025-02-20, For the new Hash Mining, the hash calculation will be 100 hash plus 100% of its 100 hash value(Requested amendment on 2025-02-18). The old hash mining the remain same. * <br/>
 
-##  6) Swap (lived 18/12/2024)
-Currently, only **Meets** tokens can be swapped to **tubes_usd**. 
+>  -  *Both action can be made once the Max Cap bonus (user profits) has been fully swapped out into GT Tokens*
 
->  - Each user has a daily maximum limit of 5,000 meets for swaps.
->  - The exchange process involves converting meet tokens to their USD value, and subsequently converting the USD value to **tubes_usd**.
->  - Token values are retrieved from the Lbank API, which updates every 5 minutes.
+## 10) RP Wallet Internal Transfer  
+- Players can **transfer RP Points** (1:1 USDT value) within their **own network line**.  
+- Transferred RP can be used by downline members for deposits (**80% Cash + 20% RP**).  
+- Transfers are **only allowed within the same network line** and cannot be sent outside.
+- With 3% charges of RP token  
