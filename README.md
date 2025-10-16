@@ -1,10 +1,8 @@
-
-  
-  
-  
-  
-
 #  Labubu
+
+## cPanel Requirement
+- mysql 5.7
+- php7.3
 
 ##  1) Deposit
 
@@ -277,6 +275,8 @@ Currently, only **GT** tokens can be swapped to **USDT** OR **ai16z**.
 >  - Each user have max cap bonus > 0 and max cap bonus usage > 0 can swap **GT**. Minimum amount is based on max cap bonus.
 >  - Token values are retrieved from the Lbank API, which updates every 5 minutes (only for ai16z, GT token is not **real token**).
 >  - Swap charges is 3% charges GT Token.
+>  - When swap GT to Usdt, it only can be swap based on user_bonus_max_cap_usage and user_bonus_max_cap. user_bonus_max_cap is total user can be swap value, user_bonus_max_cap_usage is record how much user earning and based on this value to swap out. But if user_bonus_max_cap is zero; both user_bonus_max_cap and user_bonus_max_cap_usage is zero; and swapped value record cannot equal or bigger than user_bonus_max_cap_usage, user can't perform any swap action based on above situation.
+>  - to check current swap amount (gt to usdt), SELECT SUM(mt_deduct) as total FROM mg_member_transaction WHERE user_id = $user_id AND mt_type = 'swap' AND mt_wallet = 'game' AND mt_status = 'success' AND mt_is_limit_swap = 1 AND mt_is_swap = 0 AND mt_confirmations != 1 
 
 
 ##  9) Swap All OR Reinvest 
@@ -293,4 +293,47 @@ Currently, only **GT** tokens can be swapped to **USDT** OR **ai16z**.
 - Players can **transfer RP Points** (1:1 USDT value) within their **own network line**.  
 - Transferred RP can be used by downline members for deposits (**80% Cash + 20% RP**).  
 - Transfers are **only allowed within the same network line** and cannot be sent outside.
-- With 3% charges of RP token  
+- With 3% charges of RP token
+
+## 11) Aws image link edit
+>- Current system box file picture into AWS service, need to get the AWS service own and reconnect to correct server.
+>- Current use save picture file:
+   1. App\Domains\Admin\Controllers\Market.php ->editMarketPlaceBlindBox()
+   2. App\Domains\Admin\Controllers\Collection.php ->editCollection()
+
+## 12) Max cap & Max cap usage edit file
+- For the business logic max cap please refer 2) Deposit Game Token, it explain how it caluclate the Max Cap usage.
+- Affected table, mg_user, mg_bonus_max_cap_usage_record and mg_member_transaction 
+- For the Max Cap Usage, it invlove increase and decrease.
+- Increase :
+- 1. when User Box have been sold on market, it get Different price Buy price box and Sold price box as GT Token. (Add 6% different price)
+  2. when user Swap ai16z to GT Token. (add the GT token amount included charges)
+  3. When Admin add GT token for desire user, but if the amount excced the max cap, it will based on max cap usage outstading figure and give it to the user. other amount will turn into RP Token
+  4. When user Claim prize reward
+- Decrease :
+- 1. When user swap GT token to ai16z Token. (not included charges, Amount - [amount * 0.03])
+
+- File included:
+- Controller :
+- 1. App\Domains\Member\Controllers\Swap.php -> swapGtAiForm()
+  2. App\Domains\Member\Controllers\Swap.php -> reinvestSwapAll()
+  3. App\Domains\Member\Controllers\Transfer.php -> transferGameWallet() (only method_3 will increase max cap usage)
+  4. App\Domains\Admin\Controllers\Wallet.php -> adjustment() (admin side)
+- Models :
+- 1. App\Models\Marketplace\MainMarket.php ->processPurchaseBellV2()
+  2. App\Models\Marketplace\MainMarket.php ->processClaimFragmentPrize()
+  3. App\Models\Marketplace\MainMarket.php ->processClaimPrize()
+
+## 13) Config file
+- App\Config\App.php
+- App\Config\System.php
+
+## 14) Bonus edit file
+- Controllers -> App\Domains\Www\Controllers\CronBonus.php (This url run daily at 00:05. it will calculate rank only start distribute alliance bonus. Bonus logic can refer 6)Bonus )
+- Models -> App\Models\Bonus\Bonus6.php (Used function can find in above controller function)
+
+## 15) Blindbox trading file edit
+- Controller -> App\Domains\Member\Controllers\Market.php -> purchaseBellAjaxV2()
+- Models -> App\Models\Marketplace\MainMarket.php ->processPurchaseBellV2()
+- Models -> App\Models\Marketplace\Bonus6.php ->calcSoldBoxBonus()
+- Models -> App\Models\Marketplace\Bonus6.php ->treasuryBonus()
