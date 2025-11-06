@@ -254,7 +254,7 @@ Only Small Zone Sales (Exclude Big Leg) is used to calculate ranking, thus minim
 
 >  ***Note**:*
 
->  -  *Small zone sales are calculated based on Deposit amount / swap from game wallet to usdt wallet only*
+>  -  *Small zone sales are calculated based on Deposit amount / swap from usdt wallet to game wallet only*
 >  -  *Rank calculate weekly based on user in game date*
 >  -  *Different Rank will affect Bonus Max Cap limit, getting bonus Alliance Bonus, buy box qty and sell box qty* 
 
